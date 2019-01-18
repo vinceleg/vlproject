@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Games-page</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+    <h1>ESPORTS PROJECT</h1>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+
+    <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBFjk68QRYvO8AGgM4ydQcuF7QMPlYKvZg",
+        authDomain: "esportspage-12ee8.firebaseapp.com",
+        databaseURL: "https://esportspage-12ee8.firebaseio.com",
+        projectId: "esportspage-12ee8",
+        storageBucket: "esportspage-12ee8.appspot.com",
+        messagingSenderId: "40003431878"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <div class="topnav">
+      <a href="main.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="news.html">News</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="community.html">Community</a>
+      <a href="index.html" style = "float: right">Sign Out</a>
+      <a class ="active" href="profile.html" style= "float: right">Profile</a>
+      <input type="text" style = "float:right" placeholder="Search...">
+    </div>
+
+    
+        <!-- Page Content -->
+        <div class="container">
+    
+          <!-- Page Heading -->
+          <h1 class="my-4">Profile
+            </h1>
+            <h3>under construction :)</h3>
+
+          <div class="row">
+              <div class="col-md-7">
+              </div>
+              <div class="col-md-5">
+                <h3 id="name">Overwatch</h3>
+                <h3 id="email">Overwatch</h3>
+                <a class="btn btn-primary" href="#">Game-Page</a>
+              </div>
+            </div>
+
+            <script>
+              firebase.auth().onAuthStateChanged(function(user) {
+              var name, email, uid, emailVerified;
+              if (user != null) {
+                  name = user.displayName;
+                  console.log(user.name);
+                  email = user.email;
+                  document.getElementById('name').innerHTML = name;
+                  document.getElementById('email').innerHTML = email;
+                  emailVerified = user.emailVerified;
+                  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                                   // this value to authenticate with your backend server, if
+                                   // you have one. Use User.getToken() instead.
+              }
+            });
+            
+            </script>
+          
+    
+        <!-- Footer -->
+        <footer class="py-5 bg-dark">
+          <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Group-16</p>
+          </div>
+          <!-- /.container -->
+        </footer>
+    
+        <!-- Bootstrap core JavaScript -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+      </body>
+
+  </body>
+
+</html>

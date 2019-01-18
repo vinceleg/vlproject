@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tournaments</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
+
+    <style>
+      table {
+      border-collapse: collapse;
+      width: 100%;
+     }
+
+      th, td {
+          text-align: left;
+          padding: 6px;
+          margin-top: 8px;
+          margin-right: 16px;
+          border-bottom: 1px solid #ddd;
+      }
+
+    </style>
+   <script src="jquery-3.3.1.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBFjk68QRYvO8AGgM4ydQcuF7QMPlYKvZg",
+    authDomain: "esportspage-12ee8.firebaseapp.com",
+    databaseURL: "https://esportspage-12ee8.firebaseio.com",
+    projectId: "esportspage-12ee8",
+    storageBucket: "esportspage-12ee8.appspot.com",
+    messagingSenderId: "40003431878"
+  };
+  firebase.initializeApp(config);
+</script>
+   <h1>KSV ESPORTS</h1>
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <div class="topnav">
+      <a href="main.html">Home</a>
+      <a href="games.html">Games</a>
+      <a href="news.html">News</a>
+      <a class = "active" href="tournaments.html">Tournaments</a>
+      <a href="community.html">Community</a>
+      <a href="index.html" style = "float: right">Sign Out</a>
+      <a href="profile.html" style= "float: right">Profile</a>
+      <input type="text" style = "float:right" placeholder="Search...">
+    </div>
+
+    <!-- Page Content -->
+    <div class="container">
+
+      <!-- Page Heading -->
+      <h1 class="my-4">CS:GO World Championships
+      </h1>
+      <div class="container"></div>
+      <img class="img-fluid rounded mb-3 mb-md-0" src="./images/csgoworlds.png" alt="" height="200" width="200">
+      <form action = "" id="userform" >
+        <p></p>
+        <p id="words">Enter your info to sign up for tournament</p>
+        Username:<br>
+        <input id="yourName" name="userName" type="text" placeholder="Username...">
+        <br><br>
+        Team:<br>
+        <input id="yourTeam" name="userTeam" type="text" placeholder="Team...">
+        <br><br>
+        <input id="submit" name="submit" type="submit" onclick="window.location.reload()">
+    </form>
+    </div>
+    <p></p>
+    <div class="container">
+
+    <br>
+    <p><center><b><u>TEAMS ENTERED</b></u></center></p>
+
+    <table id="entrants">
+        <tr>
+            <td><b>Team Leader</b></td>
+            <td><b>Team Name</b></td>
+        </tr>
+    </table>
+    </div>
+    <script>
+        let nameRef = firebase.database().ref('CSGOWORLDSENTRANTS');
+        document.getElementById("userform").addEventListener('submit', function(event) {
+            event.preventDefault();
+            let name = document.getElementById("yourName").value;
+            let team = document.getElementById("yourTeam").value;
+            console.log(name);
+            let newScore = nameRef.push();
+            newScore.set( {
+                name: name,
+                team: team,
+            });
+        });
+        function update_tournament(){
+            let scoreData = firebase.database().ref('CSGOWORLDSENTRANTS');
+            scoreData.once('value', function(snapshot) {
+                // note: we can use scoreData.on('value', etc) to have it auto-update
+                // note: need to fix so auto-update doesn't add the whole list again
+                let scoreArray = [];
+                let table = document.getElementById("entrants");
+                snapshot.forEach(function(childSnapshot) {
+                    let row = table.insertRow(-1);
+                    let cell1 = row.insertCell(0);
+                    let cell2 = row.insertCell(1);
+                    let data = childSnapshot.val();
+                    let name = data.name;
+                    let team = data.team;
+                    cell1.innerHTML = name;
+                    cell2.innerHTML = team;
+                    });
+                });   
+        }
+        update_tournament();
+    </script>
+    <br><br>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Group-16</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>
