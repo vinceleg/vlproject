@@ -1,4 +1,7 @@
 # vlproject
-Repo for my personal projects
+Repo for my projects
 
-Ideas: tic tac toe, website, time management app/site
+Projects
+- Single User Dungeon
+- eSports Website
+- Personal Website (in progress)
