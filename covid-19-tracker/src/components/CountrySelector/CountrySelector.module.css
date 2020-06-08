@@ -1,0 +1,11 @@
+.formControl{
+    width: 30%;
+    margin-bottom: 30px !important;
+    background-color:lavender;
+    border-radius: 5px;
+        
+}
+
+.nativeSelect{
+    align-content: center;
+}
