@@ -5,6 +5,7 @@ Global and individual country COVID-19 statistics are visually represented as Ca
 Live data is fetched from an API.  
 
 API: https://covid19.mathdro.id/api
+[Live Application] (https://vinceleg.github.io/covid/)
 
 ### Built With
 
