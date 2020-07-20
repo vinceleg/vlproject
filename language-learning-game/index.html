@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Fan Favourites</title>
+  <title>Stitch It</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="./src/css/bootstrap.css" />
@@ -92,23 +92,13 @@
         var reader = new FileReader();
         reader.onload = function (e) {
             var contents = e.target.result;
-            // Display file content
-            // console.log(contents.split("\n"))
-            // displayContents(contents);
-            window.localStorage.setItem("word_data", JSON.stringify(contents.split('\n')))
-            console.log(JSON.stringify(contents.split('\n')));
+            window.localStorage.setItem("word_data", JSON.stringify(contents.split(" ")));
         };
         reader.readAsText(file);
     }
 
-    // function displayContents(contents) {
-    //   var element = document.getElementById('file-content');
-    //   element.innerHTML = contents;
-    // }
-
       if ($("#option1").is(':checked')) {
         window.localStorage.setItem("word_data",  JSON.stringify(listCommonlyWords));
-        console.log(listCommonlyWords);
       }
 
       document.getElementById('file-input').addEventListener('change', readSingleFile, false);
@@ -122,7 +112,6 @@
       });
       $("#option1").click(function() {
         window.localStorage.setItem("word_data",  JSON.stringify(listCommonlyWords));
-        console.log(listCommonlyWords);
         $("#fileLink").fadeTo('slow', 0, function() {
           $("#fileLink").css('visibility', 'hidden');
           $('#play-button').css('transform', 'translatey(-90px)');
@@ -136,9 +125,6 @@
         //replace the "Choose a file" label
         $('.custom-file-label').html(fileName.replace("C:\\fakepath\\", ""));
       })
-
-
-
   </script>
 
   <script src="./src/js/bootstrap.js"></script>

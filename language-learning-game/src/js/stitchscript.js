@@ -54,14 +54,10 @@
 
 }( jQuery ));
 
-//----------------------------------------------
-// DUMMY DATA______________
-
 
 var word = "vocabulary";
 const syllableRegex = /[^aeiouy]*[aeiouy]+(?:[^aeiouy]*$|[^aeiouy](?=[^aeiouy]))?/gi;
 const englishRegex = /^[a-zA-Z0-9?><;,{}[\]\-_+=!@#$%\^&*|']+$/;
-// const englishRegex = /^[a-zA-Z0-9]+$/;
 
 //----------------------------------------------
 
@@ -69,8 +65,6 @@ const englishRegex = /^[a-zA-Z0-9?><;,{}[\]\-_+=!@#$%\^&*|']+$/;
 function getUltimate(){
   return $.getJSON('../src/data/ultimate.json');
 }
-
-
 
 
 $('#test').on('click', function() {
@@ -85,7 +79,7 @@ function getRandomInt(max) {
 // DOCUMENT READY
 $(document).ready(function() {
 
-  // if statemenet for if it's a new game
+  // if statement for if it's a new game
   // TODO: set the localstorage 'score' as zero once game ends
 
   if (window.localStorage.getItem('score') != null) {
@@ -93,17 +87,10 @@ $(document).ready(function() {
   } else {
     window.localStorage.setItem('score', 0);
   }
-  console.log(window.localStorage.getItem('score'));
 
   //Incrementing through a list of words stored in storage
-  // var counter = window.localStorage.getItem('counter');
   var loWords = JSON.parse(window.localStorage.getItem('word_data'));
-  // var word = "";
-  // console.log("pre: " + counter);
-  // if (counter < loWords.length) {
-  //   word = loWords[counter];
-  //   window.localStorage.setItem('counter', ++counter);
-  // }
+
   var random = getRandomInt(loWords.length);
   while (random == window.localStorage.getItem('randomNumber')) {
     if (loWords.length <= 1) {
@@ -113,23 +100,12 @@ $(document).ready(function() {
     }
   }
   window.localStorage.setItem('randomNumber', random);
-  console.log("random Number: " + random);
-  console.log("loWords here: " + loWords[random]);
   word = loWords[random];
-
-
 
 
   //displaying syllables to html
   var listSyllables = [];
   listSyllables = syllabify(word);
-  console.log(word)
-
-  // console.log(listSyllables);
-  // console.log(syllabify(word));
-  // console.log(listSyllables.length);
-
-  var addedList = [];
 
   let counter = 1;
   let clickedWord = "";
@@ -155,14 +131,11 @@ $(document).ready(function() {
         setTimeout(function() {
           checkCorrect(clickedWord);
         }, 100);
-
-        console.log("yes")
         counter++;
 
       } else if (div.style.backgroundColor == '#A7E8BD') {
         console.log("already selected syllable");
       } else {
-        console.log ("no")
         divCon.style.backgroundColor = '#EFA7A7';
         setTimeout(function () {
           divCon.style.backgroundColor = 'white';
@@ -170,20 +143,12 @@ $(document).ready(function() {
       }
     }
 
-    // var div = $(`<div class="syllable" id="${i}">${listSyllables[i]}</div>`);
-
-    // div.innerHTML = "hello";
-
     to_be_hooked.push(divCon);
-    console.log(to_be_hooked);
-
   }
 
   to_be_hooked.forEach(element => {
     $('#mainContent').append(element);
   });
-
-
 
 
   //Loading audio file
@@ -198,8 +163,6 @@ $(document).ready(function() {
     document.getElementById("quarter-speed").style = "background-color:rgba(0,0,0,0)";
     document.getElementById("full-speed").style = "background-color: rgba(0,0,0,0)";
     document.getElementById("two-speed").style = "background-color:rgba(0,0,0,0)";
-
-
   });
 
   $('#quarter-speed').on('click', function() {
@@ -227,46 +190,20 @@ $(document).ready(function() {
   });
 
   getUltimate().done(function(json) {
-    console.log("the ultimate word: " + json[word]);
-    console.log("hi: " + parseaws(word, json));
+    let we = JSON.stringify(word).replace(/\r\n/g, ' ').replace(/[\r\n]/g, ' ');
     $('#word-audio').attr('src', parseaws(word, json))
   })
-
-  // var word = "vocabulary"
-  // var syllables = ["vo", "ca", "bu", "lary", "test", "test", "test", "test"]
-  // var addedList = [];
-  // var attempts = 0;
-  // var attemptsDOM = document.createElement("P");
-  // attemptsDOM.id = "attempts";
-  // attemptsDOM.innerHTML = "Attempt: 0";
-  // document.body.appendChild(attemptsDOM);
-
-
-  //
-  // function checkCorrect(clickedWord) {
-  //     if(clickedWord == word){
-  //         setTimeout(function () {
-  //             // window.alert("You won the game. Attempts: " + attempts);
-  //             displayWin();
-  //             location.reload();}, 5000);
-  //     }
-  // }
-
-
 
   // WIN EVENT FUNCTION
   function win() {
     window.localStorage.setItem('score', parseInt(window.localStorage.getItem('score')) + 1);
-    console.log(window.localStorage.getItem('score'));
     loWords.splice(random, 1);
-    // console.log(loWords);
 
     window.localStorage.setItem('word_data', JSON.stringify(loWords));
     $('#overlay-con').css('display', 'flex');
     $('#wrap').css('filter', 'blur(15px)');
     checkGameEnd();
   }
-
 
   function checkCorrect(clickedWord) {
     if(clickedWord == word){
@@ -290,14 +227,7 @@ $(document).ready(function() {
   $(document).on('click', '#skip', function() {
     window.location.href = window.location.href;
   })
-
-  console.log("testing korean: " + syllabify("이지"));
-
-  console.log(JSON.parse(localStorage.getItem('word_data')));
-
-
 })
-
 
 
 //match:
@@ -306,7 +236,6 @@ $(document).ready(function() {
 //either:
 //consonant followed by end of word, or,
 //consonant followed by another consonant
-
 
 function syllabify(word) {
     //takes a string and returns a list
@@ -317,19 +246,18 @@ function syllabify(word) {
     }
 }
 
-function asianWord(word) {
-  var asianBroken = [];
+// function asianWord(word) {
+//   var asianBroken = [];
 
-  for (var i = 0; i < word.length; i++) {
-    asianBroken[i] = word[i];
-  }
-  return asianBroken;
-}
+//   for (var i = 0; i < word.length; i++) {
+//     asianBroken[i] = word[i];
+//   }
+//   return asianBroken;
+// }
 
 
 function parseaws(word, json) {
   var loLinks = json[word];
-  console.log("parseaws: " + word);
   for (var i = 0; i < loLinks.length; i++) {
     if (loLinks[i].startsWith("http://s3.amazonaws.com")) {
       return loLinks[i];
