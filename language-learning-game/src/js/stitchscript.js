@@ -239,11 +239,11 @@ $(document).ready(function() {
 
 function syllabify(word) {
     //takes a string and returns a list
-    if (englishRegex.test(word) ) {
+    // if (englishRegex.test(word) ) {
       return word.match(syllableRegex);
-    } else {
-      return asianWord(word);
-    }
+    // } else {
+    //   return asianWord(word);
+    // }
 }
 
 // function asianWord(word) {
@@ -270,6 +270,6 @@ function parseaws(word, json) {
 function displayFinalWin() {
   window.localStorage.clear();
   setTimeout(function() {
-    window.location.href = "./win/index.html";
+    window.location.href = "./win/winner-screen.html";
   }, 200)
 }

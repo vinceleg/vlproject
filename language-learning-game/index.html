@@ -59,7 +59,7 @@
       <div class="col-sm">
       </div>
       <div class="col-sm" id="btnPlay">
-        <a id="play-button" href="stitchgame/index.html" class="btn btn-primary btn-lg">Play!</a>
+        <a id="play-button" href="stitchgame/game.html" class="btn btn-primary btn-lg">Play!</a>
         <!-- <button type="button" class="btn btn-primary btn-lg" id="btn" href="./stichGame/stichGame.html">Play!</button> -->
       </div>
       <div class="col-sm">
@@ -81,8 +81,7 @@
      $('.custom-file-label').html(fileName.replace("C:\\fakepath\\", ""));
    })
 
-     var listCommonlyWords = ["business","calendar","definitely","embarrass","advantage","grammar","humorous","intelligence","jewellery","leisure","misspell","neighbour","occurrence","parliament","questionnaire","recommend","separate","tomorrow","swimming"];
-
+     var listCommonlyWords = ["business", "recommend", "tomorrow", "parliament", "grammar", "misspell", "humorous", "calendar", "mischievous", "embarrass", "neighbour", "swimming", "jewellery", "espresso", "hyperbole" ];
     function readSingleFile(e) {
         window.localStorage.setItem('counter', 0);
         var file = e.target.files[0];
