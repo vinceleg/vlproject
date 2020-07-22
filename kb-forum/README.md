@@ -4,11 +4,11 @@ A forum/social media website for people to share knowledge, post questions, answ
 
 [Live Application](https://cryptic-beyond-52237.herokuapp.com/)
 
-#####Login Credentials:  
+##### Login Credentials:  
 email: johndoe@gmail.com  
 password: password  
 
-###Built With
+### Built With
 JavaScript  
 NodeJS  
 Express  
