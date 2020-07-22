@@ -1,0 +1,11 @@
+<div class="message-form">
+    <object data="{{profile.profileImage}}">
+        <img src="/media/default-img.png" alt="Default Profile" />
+    </object>
+    
+    <form action="/addConversation" method="POST"> 
+        <input id="message-subject" name="subject" type="text" placeholder="subject" required>
+        <textarea id="message-details" name="message" type="text" placeholder="message details..." required></textarea></br>
+        <button id="create-message-btn" type="submit">Message</button>
+    </form>
+</div>

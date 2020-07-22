@@ -1,0 +1,9 @@
+{{#each this.replies}}
+    <div class="reply-section">
+        <div class="reply-profile">{{>profile-image-partial}}</div>
+        <div class="reply-content">
+            {{this.content}}
+        </div>
+    </div>
+{{/each}}
+{{>add-reply-partial}}

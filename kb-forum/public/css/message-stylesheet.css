@@ -1,0 +1,256 @@
+/*Left-side panel*/
+.split-left {
+    width: 29%;
+    height: 80%;
+    position: fixed;
+    display: inline-flex;
+    margin: 50px 5px 200px 10%;
+    left: 0;
+    font-family: 'Roboto';
+    border-right: 1px solid #e1e2e3;
+}
+
+.convo-list {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    list-style: none;
+    width: 100%;
+}
+
+.individual-convo {
+    border-bottom: 1px solid #e1e2e3;
+    width: 100%;
+    height: 130px;
+}
+
+.individual-convo:hover {
+    background-color: #e1e2e3;
+}
+
+.convo-sender-image {
+    height: 120px;
+    width: 120px; 
+    margin: 10px;
+    float: left;
+}
+
+.convo-sender-image object {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 15px;
+}
+
+.convo-sender-image img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+
+.convo-sender-info {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100%;
+    color: black;
+}
+
+.convo-sender-info h4, .convo-sender-info .convo-date {
+    display: inline;
+    vertical-align: top;
+}
+
+.convo-sender-info h4 {
+    float: left;
+    font-weight: normal;
+}
+
+.convo-sender-info #name {
+    font-size: 20px;
+}
+
+.convo-sender-info #subject {
+    display: block;
+    width: 150px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.convo-sender-info .convo-date {
+    float: right;
+    margin-top: 22px;
+    margin-right: 25px;
+}
+
+/*Right-side panel*/
+.split-right {
+    width: 49%;
+    height: 67%;
+    position: fixed;
+    display: inline-flex;
+    margin: 50px 10% 200px 0px;
+    right: 0;
+    overflow-x: hidden;
+    font-family: 'Roboto';
+    border-left: 1px solid #e1e2e3;
+    overflow-y: scroll;
+}
+
+.message-list {
+    list-style: none;
+    width: 100%;
+    padding: 3px;
+}
+
+.individual-message {
+    width: 98%;
+    min-height: 170px;
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.individual-message:hover {
+    background-color: #e1e2e3;
+}
+
+.individual-message h3 {
+    width: 100%;
+    text-align: center;
+    color: #c7c7c7;
+    border-bottom: 1px solid #e1e2e3;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+
+.individual-message h3 span {
+    background: #fff; 
+    padding: 0 10px;
+}
+
+.message-author-image {
+    height: 90px;
+    width: 90px; 
+    margin: 10px;
+    position: absolute;
+}
+
+.message-author-image object {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.message-author-image img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.message-author-info {
+    margin-top: 30px;
+    margin-left: 10px;
+    width: 100%;
+}
+
+.message-author-info p {
+    display: inline;
+    float: left;
+    margin-top: 20px;
+    margin-left: 100px;
+}
+
+.message-author-info #name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.message-author-info #content {
+    display: block;
+}
+
+.write-message {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+#message-area {
+    width: 47%;
+    /* height: 150px; */
+    font-size: 20px;
+    font-family: 'Roboto';
+    padding: 10px 0 0 10px;
+}
+
+#submit-btn {
+    border: 2px solid #42b0ed;
+    color: white;
+    background-color: #42b0ed;
+    font-size: 15px;
+    width: 60px;
+    height: 30px;
+    margin: 10px 100px 0;
+    float: right;
+}
+
+.button-section {
+    background-color: #ebf4fa;
+    height: 60px;
+    width: 49%;
+}
+
+/* Create Message Form */
+
+.message-container{
+    position: fixed;
+    display: inline-flex;
+    margin: 50px 20% 200px 0px;
+    right: 0; width: 70%;
+    height: 80%;
+    font-family: 'Roboto';
+}
+
+.message-form{
+    padding: 20px 0 0 20%;
+}
+
+.message-form object{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    padding: 5px;
+    float: left;
+}
+
+#message-subject{
+    margin: 0 0 10px 20px;
+    width: 500px;
+    height: 40px;
+}
+
+#message-details{
+    margin: 0 0 10px 20px;
+    width: 600px;
+    height: 200px;
+    text-align: left;
+}
+
+#create-message-btn{
+    margin: 0 0 10px 133px;
+    clear: left;
+    border: 2px solid #42b0ed;
+    color: white;
+    background-color: #42b0ed;
+    width: 150px;
+    height: 40px;
+    font-weight: bold;
+}

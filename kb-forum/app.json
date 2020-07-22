@@ -1,0 +1,7 @@
+{
+    "name": "Start on Heroku: Node.js",
+    "description": "My group express project",
+    "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
+    "heywords": ["node", "express", "heroku"],
+    "image": "heroku/nodejs"
+}

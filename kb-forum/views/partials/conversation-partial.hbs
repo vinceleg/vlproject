@@ -1,0 +1,17 @@
+{{#each conversation}}
+    <a href="/conversations/{{this.convoID}}">
+        <div class="individual-convo">
+            <li class="convo-sender-image">
+                <object data="{{this.profileImage}}">
+                    <img src="/media/default-img.png" alt="Default Profile" />
+                </object>
+            </li>
+            <li class="convo-sender-info">
+                <h4><span id="name">{{this.firstName}} {{this.lastName}}</span><br>
+                <span id="subject">{{this.subject}}</span></h4>
+                <p class="convo-date">{{this.convoDate}}</p>
+
+            </li> 
+        </div>
+    </a>  
+{{/each}}

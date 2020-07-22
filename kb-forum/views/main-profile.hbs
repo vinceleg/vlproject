@@ -1,0 +1,21 @@
+{{>top-panel-partial}}
+
+<!-- Left-side panel -->
+<div class="split-left">
+    {{>profile-partial}}
+</div>
+
+<!-- Right-side panel -->
+<div class="split-right">
+    {{> add-timeline-partial}}
+    {{> search-by-topic-partial}}
+
+    <form action="/profile/{{profileId}}" method="POST">
+        <!-- Prev btn. Disabled on first page. -->
+        <input id="previousPage" {{#if disablePrev}}disabled{{/if}} type="submit" name="previous" value="previous" />
+
+        <!-- Next btn. Disabled on last page. -->
+        <input id="nextPage" {{#if disableNext}}disabled{{/if}} type="submit" name="next" value="next" />
+
+    </form>
+</div>

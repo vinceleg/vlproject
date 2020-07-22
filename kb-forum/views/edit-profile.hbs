@@ -1,0 +1,29 @@
+<div class="container">
+    {{>top-panel-partial}}
+    <div class="row">
+        <!-- Left-side panel -->
+        <div class="split-left">
+            {{>profile-partial}}
+        </div>
+        <!-- Right-side panel -->
+        <div class="split-right">
+            <div class="edit-profile">
+                <form action="/edit/{{profile.profileID}}" method="POST">
+                    <label for="firstName">First Name: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="firstName" value="{{profile.firstName}}"/><br>
+                    <label for="lastName">Last Name: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="lastName" value="{{profile.lastName}}"/><br>
+                    <label for="profileImage">Profile Image URL: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="profileImage" value="{{profile.profileImage}}"/><br>
+                    <label for="country">Country: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="country" value="{{profile.country}}"/><br>
+                    <label for="DOB">Date of Birth: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="DOB" class="edit-DOB" value="{{profile.DOB}}" /><br>
+                    <label for="about">About: </label><br>
+                    <input id="edit-profile-textarea" type="text" name="about" value="{{profile.about}}"/><br>
+                    <input id="submit-edit" type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

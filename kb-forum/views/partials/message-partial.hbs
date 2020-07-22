@@ -1,0 +1,20 @@
+{{#each message}}
+    <div class="individual-message">
+        <h3><span class="message-date">{{this.messageDate}}</span></h3>
+        <li class="message-author-image">
+            {{>profile-image-partial}}
+        </li>
+        <li class="message-author-info">
+            <p><span id="name">{{this.firstName}} {{this.lastName}}</span> • <span class="message-time">{{this.messageDate}}</span><br><br>
+            <span id="content">{{this.content}}</span></p>
+        </li>
+    </div>
+{{/each}}
+<div class="write-message">
+    <form action="/addMessage" method="POST">
+        <textarea rows="4" id="message-area" name="content" placeholder="Write a message..." required></textarea><br>
+        <div class="button-section">
+            <button id="submit-btn" type="submit">Send</button>
+        </div>
+    </form>
+</div>

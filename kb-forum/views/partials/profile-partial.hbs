@@ -1,0 +1,15 @@
+<!-- Profile -->
+<div class="centered">
+    <object data="{{profile.profileImage}}">
+        <img src="/media/default-img.png" alt="Default Profile" />
+    </object>
+    <h3>{{profile.firstName}} {{profile.lastName}}</h3>
+    <p>{{profile.about}}</p>
+</div>
+<!--  Posts/Messages/Likes/Edit -->
+<div class="post-message">
+    <a href="/allposts/{{profile.profileID}}">Posts</a><p><span id="posts">{{profile.numPosts}}</span></p><br>
+    <a href="/conversations">Messages</a><p><span id="messages">{{profile.numMessages}}</span></p><br>
+    <p>Likes<span id="likes">{{profile.numLikes}}</span></p><br><br>
+    <a href="/profile/edit/{{profile.profileID}}">Edit Profile</a>
+</div>

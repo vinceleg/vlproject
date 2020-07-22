@@ -1,0 +1,70 @@
+input, button{
+    font-size: medium;
+}
+
+#heading{
+    width: 30%;
+    margin-left: 15%;
+    float: left;
+    margin-bottom: 50px;
+}
+
+
+/* Page image */
+#login-image{
+    max-width: 100%;
+    width: 30%;
+    margin-left: 15%;
+    float: left;
+    clear: left;
+}
+
+/* Right side of page */
+.login-form{
+    display: flex;
+    height: 30px;
+    width: 30%;
+    margin-left: 50%;
+    margin-bottom: 50px;
+    padding: 5px;
+}
+
+#login-password{
+    margin-left: 4px;
+}
+
+#login-btn {
+    margin-left: 5px;
+    width: 70px;
+    height: 36px;
+    background-color: #42b0ed;
+    color: white;
+    border: 1px black solid;;
+    text-align: center;
+}
+
+.signup-section{
+    width: 30%;
+    padding-top: 1px;
+    margin-left: 50%;
+}
+
+.signup-section #firstname, #lastname, #login-email, #login-password{
+    width: 39%;
+    height: 30px;
+}
+
+.signup-section input{
+    width: 80%;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
+#signup-btn{
+    width: 81%;
+    height: 31px;
+    background-color: #42b0ed;
+    color: white;
+    text-align: center;
+    border: 1px black solid;;
+}

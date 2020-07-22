@@ -1,0 +1,42 @@
+.top-panel {
+    margin: 20px 0 0 300px;
+    width: 60%;
+    height: 50px;
+    display: flex;
+}
+
+#kb-logo-img {
+    margin-left: 30px;
+}
+
+#search_form {
+    height: 35px;
+}
+
+#search_bar {
+    width: 400px;
+    height: 35px;
+    margin-left: 30px;
+    margin-right: 300px;
+    background-color: #d5dee3;
+    color: #a8b4ba;
+    border: none;
+    font-weight: bold;
+    background-image: url("/media/search-icon.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-origin: padding-box;
+    padding-left: 20px;
+}
+
+#logout-btn {
+    position: absolute;
+    left: 80%;
+    width: 85px;
+    height: 35px;
+    background-color: #42b0ed;
+    color: white;
+    border: none;
+    text-align: left;
+}

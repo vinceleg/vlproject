@@ -1,0 +1,11 @@
+{{#if-equals @root.session.profileID this.profileID }}
+    <object data="{{this.profileImage}}">
+        <img class="post-author-img" src="/media/default-img.png" alt="Default Profile" />
+    </object>
+{{else}}
+    <a href="/profile/user/{{this.profileID}}">
+        <object data="{{this.profileImage}}">
+            <img class="post-author-img" src="/media/default-img.png" alt="Default Profile" />
+        </object>
+    </a>
+{{/if-equals}}

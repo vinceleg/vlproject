@@ -1,0 +1,16 @@
+<form action="/newPost" method="POST"> <!-- FORM action/method may change -->
+    <div class="timeline-section">
+        <h3 for="posttitle">What's your question today?</h3>
+        <input name="posttitle" id="posttitle" type="text" placeholder="Subject" required><br>
+        <textarea name="postbody" id="postbody" type="text" placeholder="Explain in detail..." required></textarea><br>
+        <select name="postcategory" required>
+            <option selected disabled value="">topic</option>
+            <option value="php">php</option>
+            <option value="nodejs">nodejs</option>
+            <option value="java">java</option>
+            <option value="sql">sql</option>
+            <option value="zend">zend</option>
+        </select>
+        <button type="submit">post to timeline</button>
+    </div>
+</form>

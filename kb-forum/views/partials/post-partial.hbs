@@ -1,0 +1,46 @@
+<section class="container">
+    {{#if post}}
+        {{#each post}}
+            <div class="discussion">
+                <div>{{>profile-image-partial}}</div>
+
+                <div class="discussion-content">
+                    <div class="post-section">
+                        <h4>{{this.title}}</h4>
+                        <a href="/profile/{{this.profileID}}" id="topic">{{this.category}}</a>
+                        <p id="post-reply">{{this.content}}</p>
+                        <p class="post-date">{{this.postDate}}</p>
+                    </div>
+                    
+                    
+                    <!-- START OF: the reply section -->
+                    
+                    <button class="replyButton" onclick="toggle()">
+                        <!-- custom ifequals template made (see index.js) -->
+                        {{#if-equals this.numReplies 0}}
+                            reply
+                        {{else}}
+                            {{#if-equals this.numReplies 1}}
+                                {{this.numReplies}} reply
+                            {{else}}
+                                {{this.numReplies}} replies
+                            {{/if-equals}}
+                        {{/if-equals}}    
+                    </button>
+
+                    <div class="all-replies hidden"> <!-- hide replies by default -->                        
+                        {{>reply-partial}}
+                    </div>
+                    
+                    <!-- END OF: the reply section -->
+
+                </div>
+            </div>
+        {{/each}}
+
+    {{else}}
+        <br>
+        <div id="empty-posts">Sorry, no more posts found!</div>
+    {{/if}}
+
+</section>

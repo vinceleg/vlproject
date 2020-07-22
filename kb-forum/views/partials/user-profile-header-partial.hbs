@@ -1,0 +1,18 @@
+<!-- Profile Image, About, and Country -->
+<div class="left-header">
+        <object data="{{profile.profileImage}}">
+            <img src="/media/default-img.png" alt="Default Profile" />
+        </object>
+    <h3>{{profile.firstName}} {{profile.lastName}}</h3>
+    <p>{{profile.about}}</p>
+    <p>{{profile.country}}</p>
+</div>
+
+{{!-- Message button and add likes --}}
+<div class="right-header">
+    <a href="/profile/user/{{profile.profileID}}/newMessage">
+        <button id="message-btn">Message</button>
+    </a>
+    <p>{{profile.numLikes}} Likes <a href="/addLike/{{profile.profileID}}"><img src="/media/add-like-btn.png"></a></p>
+    <p>{{profile.numPosts}} Posts</p>
+</div>

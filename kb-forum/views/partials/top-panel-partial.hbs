@@ -1,0 +1,13 @@
+<!-- Top panel search and logout -->
+<div class="top-panel">
+    <a href="/profile/{{session.profileID}}">
+        <img src="/media/kb-logo.png" id="kb-logo-img" width="40" height="40" >
+    </a>
+    <form id="search_form" action="/search" method="POST">
+        <input id="search_bar" type="text" name="searched_words" placeholder="Search">
+    </form>
+
+    <form id="logout_form" action="/logout" method="GET">
+        <button id="logout-btn" type="submit">logout</button>
+    </form>
+</div>
