@@ -1,7 +1,7 @@
 {
     "name": "Start on Heroku: Node.js",
     "description": "KB Forum/Social Media",
-    "repository": "https://github.com/vinceleg/vlproject/tree/master/kb-forum",
+    "repository": "https://github.com/vinceleg/kb-forum",
     "logo": "https://cdn.rawgit.com/heroku/node-js-getting-started/master/public/node.svg",
     "heywords": ["node", "express", "heroku"],
     "image": "heroku/nodejs"
