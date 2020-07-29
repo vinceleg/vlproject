@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_header_selector"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/water_amount_label"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_margin="20dp"
+        >
+    </TextView>
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/twofiftymL"
+                android:id="@+id/twoFifty">
+            </RadioButton>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/onethousandmL"
+                android:id="@+id/oneThousand">
+            </RadioButton>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="@string/btnUpdate"
+        android:onClick="updateWaterIntake"
+        android:layout_marginTop="10dp"
+        android:background="#2E54A5"
+        android:textColor="#fff"
+        android:layout_marginBottom="20dp"/>
+
+
+</LinearLayout>

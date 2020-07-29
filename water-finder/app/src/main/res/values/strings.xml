@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Project</string>
+    <string name="title_activity_maps">WaterFinder</string>
+    <string name="water_amount">Today You Drank</string>
+    <string name="add_drink">Add Drink</string>
+    <string name="enter_weight">Weight (Kg)</string>
+    <string name="start">Start</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="water_amount_label">Select the amount of water: </string>
+    <string name="twofiftymL">250mL</string>
+    <string name="onethousandmL">1000mL</string>
+    <string name="btnUpdate">Add Water</string>
+    <string name="LabelL">L</string>
+    <string name="litres">Litres</string>
+    <string name="defaultValue">0</string>
+    btnUpdate
+</resources>
