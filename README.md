@@ -1,8 +1,9 @@
 # Vincent Liang's Projects
 
 Projects
-- Single User Dungeon
+- Single User Dungeon Game
 - eSports Website
 - Covid cases tracker
-- BCIT Hackathon Language Learning Game
-- Knowledge Base Forum
+- Language Learning Game
+- Knowledge Base Forum/Social Media Website
+- Water Finder Android App
